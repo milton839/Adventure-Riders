@@ -1,11 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 import Home from './Component/Home/Home';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import Header from './Component/Header/Header';
 import Destination from './Component/Destination/Destination';
@@ -23,7 +21,7 @@ function App() {
   const [vehicle, setVehicle] = useState([]);
   const [loggedInUser, setLoggedInUser] = useState([]);
   return (
-    <UserContext.Provider value={[loggedInUser,setLoggedInUser]}>
+    <UserContext.Provider value={[vehicle,setVehicle,loggedInUser,setLoggedInUser]}>
       <p>Name: {loggedInUser.name}</p>
       <p>Name: {loggedInUser.email}</p>
       <Header></Header>

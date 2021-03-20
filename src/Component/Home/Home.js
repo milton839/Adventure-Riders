@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import './Home.css';
 import rideAllData from '../../RideData/RideData.json';
 import HomeItem from '../HomeItem/HomeItem';
@@ -9,7 +9,7 @@ const Home = () => {
     // const [rideData,setRideData] = useState([]);
     useEffect(() => {
         setVehicle(rideAllData);
-    },[]);
+    },[setVehicle]);
     // console.log(rideData);
     return (
         <div className="home_page">

@@ -1,11 +1,10 @@
 import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { UserContext } from '../../App';
-import rideData from '../../RideData/RideData.json';
 
 const RideDetails = () => {
     const {rideName} = useParams();
-    const [vehicle,setVehicle] = useContext(UserContext);
+    const [vehicle] = useContext(UserContext);
     const selectedVehicle = vehicle.find(vh => vh.ride_name===rideName);
     console.log(selectedVehicle);
     

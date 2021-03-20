@@ -20,7 +20,7 @@ const LogIn = () => {
         error:'',
         success:false,
       })
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [setLoggedInUser] = useContext(UserContext);
     const history = useHistory();
     const location = useLocation();
     const { from } = location.state || { from: { pathname: "/" } };
@@ -161,7 +161,7 @@ const LogIn = () => {
               !newUser ?<input type="submit" style={{ padding:'7px 112px',marginBottom:'10px',backgroundColor:'tomato',border:'none' }} value="Log In"/>:<input type="submit" style={{ padding:'7px 68px',marginBottom:'10px',backgroundColor:'tomato',border:'none' }} value="Create An Account"/>
           }
           {
-              !newUser ? <p>Don't have any account <span><a href="" onClick={()=>setNewUser(!newUser)}><input type="checkbox" onChange={()=>setNewUser(!newUser)} name="newUser" id=""/> create an account</a></span></p>:<p>Already have an account?<a href="" onClick={()=>setNewUser(!newUser)}><input type="checkbox" onChange={()=>setNewUser(!newUser)} name="newUser" id=""/>Login</a></p>
+              !newUser ? <p>Don't have any account <span><a href="" onClick={()=>setNewUser(!newUser)}><input type="checkbox" onChange={()=>setNewUser(!newUser)} name="newUser" id=""/> create an account</a></span></p>:<p>Already have an account?<a  onClick={()=>setNewUser(!newUser)}><input type="checkbox" onChange={()=>setNewUser(!newUser)} name="newUser" id=""/>Login</a></p>
           }
         </form>
       

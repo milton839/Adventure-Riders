@@ -5,13 +5,13 @@ import HomeItem from '../HomeItem/HomeItem';
 import { UserContext } from '../../App';
 
 const Home = () => {
-    const [vehicle,setVehicle] = useContext(UserContext);
+    const [setVehicle] = useContext(UserContext);
     const [rideData,setRideData] = useState([]);
     useEffect(() => {
         setRideData(rideAllData);
         setVehicle(rideAllData);
 
-    },[setRideData]);
+    },[setVehicle]);
     // console.log(rideData);
     return (
         <div className="home_page">

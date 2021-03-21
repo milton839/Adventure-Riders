@@ -8,7 +8,7 @@ import { GoogleMap, LoadScript } from '@react-google-maps/api';
 
 const Destination = () => {
     const [transport, setTransport] = useState([]);
-    const [search] = useState('');
+    const [search, setSearch] = useState('');
     const [show, setShow] = useState(false);
     const [destination, setDestination] = useState({
         from: '',

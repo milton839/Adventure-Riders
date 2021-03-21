@@ -52,10 +52,24 @@ const Destination = () => {
                                 </h2>
                             </div>
                             
-                            <img style={{ width:'200px',height:'100px' }} src={selectedTransport.img} alt=""/>
-                            <h1>
-                                This is: {selectedTransport.ride_name}
-                            </h1>
+                            <div>
+                                <img style={{ width:'200px',height:'100px' }} src={selectedTransport.img} alt=""/>
+                                <h1>
+                                    This is: {selectedTransport.ride_name}
+                                </h1>
+                            </div>
+                            <div>
+                                <img style={{ width:'200px',height:'100px' }} src={selectedTransport.img1} alt=""/>
+                                <h1>
+                                    This is: {selectedTransport.ride_name}
+                                </h1>
+                            </div>
+                            <div>
+                                <img style={{ width:'200px',height:'100px' }} src={selectedTransport.img2} alt=""/>
+                                <h1>
+                                    This is: {selectedTransport.ride_name}
+                                </h1>
+                            </div>
                         </div>
                     )
                 }

@@ -21,18 +21,18 @@ function App() {
   const [vehicle, setVehicle] = useState([]);
   const [loggedInUser, setLoggedInUser] = useState([]);
   return (
-    <UserContext.Provider value={[vehicle,setVehicle,loggedInUser,setLoggedInUser]}>
+    <UserContext.Provider value={[loggedInUser,setLoggedInUser,vehicle,setVehicle]}>
       <p>Name: {loggedInUser.name}</p>
-      <p>Name: {loggedInUser.email}</p>
+      <p>Email: {loggedInUser.email}</p>
       <Header></Header>
         <Router>
           <Switch>
             <Route path="/home">
                 <Home></Home>
             </Route>
-            <Route path="/rideType/:rideName">
+            <PrivateRoute path="/rideType/:rideName">
                 <RideDetails></RideDetails>
-            </Route>
+            </PrivateRoute>
             <PrivateRoute path="/destination">
                 <Destination></Destination>
             </PrivateRoute>

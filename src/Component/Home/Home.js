@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './Home.css';
 import rideAllData from '../../RideData/RideData.json';
 import HomeItem from '../HomeItem/HomeItem';
@@ -6,17 +6,19 @@ import { UserContext } from '../../App';
 
 const Home = () => {
     const [vehicle,setVehicle] = useContext(UserContext);
-    // const [rideData,setRideData] = useState([]);
+    const [rideData,setRideData] = useState([]);
     useEffect(() => {
+        setRideData(rideAllData);
         setVehicle(rideAllData);
-    },[setVehicle]);
+
+    },[setRideData]);
     // console.log(rideData);
     return (
         <div className="home_page">
             <div className="home_item container">
                 <div className="row">
                     {
-                        vehicle.map(rider=><HomeItem rider={rider} key={rider.id}></HomeItem>)
+                        rideData.map(rider=><HomeItem rider={rider} key={rider.id}></HomeItem>)
                     }
                 </div>
             </div>

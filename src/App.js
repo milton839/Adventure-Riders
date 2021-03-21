@@ -20,12 +20,14 @@ export const UserContext = createContext();
 function App() {
   const [vehicle, setVehicle] = useState([]);
   const [loggedInUser, setLoggedInUser] = useState([]);
+  console.log(loggedInUser);
   return (
     <UserContext.Provider value={[loggedInUser,setLoggedInUser,vehicle,setVehicle]}>
-      <p>Name: {loggedInUser.name}</p>
+      <p>Name: {loggedInUser.name || loggedInUser.displayName}</p>
       <p>Email: {loggedInUser.email}</p>
-      <Header></Header>
+      
         <Router>
+        <Header></Header>
           <Switch>
             <Route path="/home">
                 <Home></Home>

@@ -102,12 +102,14 @@ const Login = () => {
                 .signInWithEmailAndPassword(user.email, user.password)
                 .then(res => {
                     const newUserInfo = { ...user };
+                    newUserInfo.displayName = res.user.displayName;
                     newUserInfo.error = " ";
                     newUserInfo.success = true;
                     setUser(newUserInfo);
                     setLoggedInUser(newUserInfo);
-                    history.replace(from);
                     console.log('Sign in user info', res.user);
+                    history.replace(from);
+                    
                 })
                 .catch(function (error) {
                     // Handle Errors here.
@@ -126,6 +128,7 @@ const Login = () => {
 
         user
             .updateProfile({
+                name: name,
                 displayName: name,
 
             })
